@@ -17,7 +17,9 @@ Data has binary flags (1,2,4,8,16, etc.)
  1024 - monsters
 */
 65536:
-["You are wearing a \\64, \\1 dress, with \\4. It is \\16, and made of \\32.",
+[
+/*
+"You are wearing a \\64, \\1 dress, with \\4. It is \\16, and made of \\32.",
 "You are wearing a \\64, \\1 dress, with \\4. It is \\512 with a \\1024, and made of \\32.",
 "You are wearing a \\64, \\1 dress, with \\4. It is \\16, \\512 with a \\1024, and made of \\32.",
 "You are wearing a \\64, \\1 shirt, with \\8, and \\1, \\64 pants.",
@@ -40,9 +42,9 @@ Data has binary flags (1,2,4,8,16, etc.)
 "You are wearing a \\16, \\32, \\64, \\1 dress.",
 "You are wearing a \\32, \\16, \\1 dress, \\512 with a \\1024.",
 "You are wearing a \\16, \\32, \\64, \\1 dress, \\512 with a \\1024.",
-"\\2 \\256",
-"\\2 \\256",
-"\\2 \\256",
+"\\2\\256",
+"\\2\\256",
+"\\2\\256",
 "You are wearing a \\64, \\32, \\1 shirt with \\1 \\128, and \\64, \\32, \\16, \\1 pants with \\1 \\128.",
 "You are wearing a \\64, \\1 dress, with \\4. It is made of \\32.",
 "You are wearing a \\64, \\1 dress, with \\8. It is made of \\32.",
@@ -55,9 +57,12 @@ Data has binary flags (1,2,4,8,16, etc.)
 "You are wearing a \\32, \\1 shirt with a matching skirt. It is \\512 with a \\1024.",
 "You are wearing a \\1 dress with \\1 \\128.",
 "You are wearing a \\32, \\1 dress.",
+*/
 "You are wearing a \\1 dress with \\1 \\128. It is \\512 with a \\1024.",
+/*
 "You are wearing a \\32, \\1 dress. It is \\512 with a \\1024.",
 "You are wearing a \\1 suit, a \\1 shirt, and a \\1 tie."
+*/
 ],
 1: [
 "light red",
@@ -102,7 +107,7 @@ Data has binary flags (1,2,4,8,16, etc.)
 "You're in a thong and pasties",
 "You're in a fursuit",
 "You're wearing your underwear on your head",
-"You're wearing a figleaf!",
+"You're wearing a figleaf",
 ],
 4: [
 "a polo collar",

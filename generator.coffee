@@ -5,6 +5,7 @@ module.exports = class Generator
   constructor: () ->
     @MAX_FIELDS = 16
     @COLOR_IDX = @log2 2
+    @MONSTER_PREFIX = ""
     @_load()
 
   log2: (v) -> # http://graphics.stanford.edu/~seander/bithacks.html#IntegerLogObvious
@@ -27,7 +28,7 @@ module.exports = class Generator
       throw "Unknown mask #{mask}"
     i = Math.floor(Math.random()*search.length)
     str = search[i]
-    str = str.replace /\\(\d+)/gim, (match, num, offset) =>
+    str = str.replace /\\(\d+)/gi, (match, num, offset) =>
       return @_generate @log2 num
     return str
 
@@ -68,9 +69,9 @@ module.exports = class Generator
             return true
         return false
       if line
-        @_search[idx].push "you turn into a #{line}"
+        @_search[idx].push "#{@MONSTER_PREFIX}#{line}"
         if not colored(line)
-          @_search[idx].push "you turn into a \\2 #{line}"
+          @_search[idx].push "#{@MONSTER_PREFIX}\\#{@COLOR_IDX} #{line}"
 
   moreColors: ->
     idx = @log2 @COLOR_IDX
