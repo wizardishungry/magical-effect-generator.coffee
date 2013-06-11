@@ -17,8 +17,8 @@ class Generator
     search = @_search[mask]
     if not search
       return '@@'
-    i = Math.floor(Math.random()*@_search[mask].length)
-    str = @_search[mask][i]
+    i = Math.floor(Math.random()*search.length)
+    str = search[i]
     str = str.replace /\\(\d+)/gim, (match, num) =>
       return @generate @log2 num
     return str
