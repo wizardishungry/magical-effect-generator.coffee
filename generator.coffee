@@ -4,7 +4,7 @@ module.exports = class Generator
 
   constructor: () ->
     @MAX_FIELDS = 16
-    @COLOR_IDX = @log2 2
+    @COLOR_IDX = 2
     @MONSTER_PREFIX = ""
     @_load()
 
@@ -63,7 +63,7 @@ module.exports = class Generator
     idx = @log2 idx
     for line,i in array
       colored = (string) =>
-        for color in @_search[@COLOR_IDX]
+        for color in @_search[@log2 @COLOR_IDX]
           r = new RegExp "^#{color} "
           if string.match color
             return true

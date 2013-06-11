@@ -1,11 +1,8 @@
 Generator = require './generator'
 module.exports = class Outfit extends Generator
-  constructor: ->
-    super
-    @COLOR_IDX = @log2 2
-
   _register: (data) ->
+    @COLOR_IDX = 1
     super data
-    @moreColors 2
+    @moreColors
     @moreMonsters 'monsters.txt', 1024
     @moreMonsters 'pokemon.txt', 1024

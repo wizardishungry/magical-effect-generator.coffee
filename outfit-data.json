@@ -18,7 +18,6 @@ Data has binary flags (1,2,4,8,16, etc.)
 */
 65536:
 [
-/*
 "You are wearing a \\64, \\1 dress, with \\4. It is \\16, and made of \\32.",
 "You are wearing a \\64, \\1 dress, with \\4. It is \\512 with a \\1024, and made of \\32.",
 "You are wearing a \\64, \\1 dress, with \\4. It is \\16, \\512 with a \\1024, and made of \\32.",
@@ -57,12 +56,9 @@ Data has binary flags (1,2,4,8,16, etc.)
 "You are wearing a \\32, \\1 shirt with a matching skirt. It is \\512 with a \\1024.",
 "You are wearing a \\1 dress with \\1 \\128.",
 "You are wearing a \\32, \\1 dress.",
-*/
 "You are wearing a \\1 dress with \\1 \\128. It is \\512 with a \\1024.",
-/*
 "You are wearing a \\32, \\1 dress. It is \\512 with a \\1024.",
 "You are wearing a \\1 suit, a \\1 shirt, and a \\1 tie."
-*/
 ],
 1: [
 "light red",
