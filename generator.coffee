@@ -13,14 +13,22 @@ class Generator
       r++
     return r
   
-  generate: (mask=@MAX_FIELDS) ->
+  generate: () ->
+    str = @_generate @MAX_FIELDS
+    sens = str.split '. '
+    sens = sens.map (string) =>
+       return  string.charAt(0).toUpperCase() + string.slice 1
+    str = sens.join '. '
+    return str
+
+  _generate: (mask) ->
     search = @_search[mask]
     if not search
       return '@@'
     i = Math.floor(Math.random()*search.length)
     str = search[i]
-    str = str.replace /\\(\d+)/gim, (match, num) =>
-      return @generate @log2 num
+    str = str.replace /\\(\d+)/gim, (match, num, offset) =>
+      return @_generate @log2 num
     return str
 
   _register: (data) ->
@@ -49,7 +57,31 @@ class Generator
     data = eval '('+contents.toString()+')'
     @_register data
 
+  moreMonsters: (filename, idx, color_idx) ->
+    array = fs.readFileSync("#{__dirname}/#{filename}").toString().split "\n"
+    idx = @log2 idx
+    for line,i in array
+      if line
+        @_search[idx].push "you turn into a #{line}"
+        @_search[idx].push "you turn into a \\2 #{line}"
+
+  moreColors: (idx) ->
+    array = fs.readFileSync("#{__dirname}/colors.txt").toString().split "\n"
+    idx = @log2 idx
+    colors = {}
+    for line in array
+      if line
+        line =  line.toLowerCase().replace /\(.*/, ''
+        colors[line] = line
+    for color,i in colors
+        @_search[idx].push color
+
 class Magic extends Generator
+  _register: (data) ->
+    super data
+    @moreColors 2
+    @moreMonsters 'monsters.txt', 128, 2
+    @moreMonsters 'pokemon.txt', 128, 2
 
 magi = new Magic
 console.log magi.generate()
