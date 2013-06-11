@@ -1,11 +1,10 @@
 fs = require 'fs'
 
-class Generator
+module.exports = class Generator
 
   constructor: () ->
     @MAX_FIELDS = 16
     @_load()
-
 
   log2: (v) -> # http://graphics.stanford.edu/~seander/bithacks.html#IntegerLogObvious
     r = 0
@@ -51,7 +50,7 @@ class Generator
           #console.log "#{bitField} & #{bitMask}: #{str}"
 
   _load: () ->
-    filename = "#{__dirname}/magic.json"
+    filename = "#{__dirname}/magic-data.json"
     contents = fs.readFileSync filename
     #@_register JSON.parse contents.toString()
     data = eval '('+contents.toString()+')'
@@ -75,13 +74,3 @@ class Generator
         colors[line] = line
     for color,i in colors
         @_search[idx].push color
-
-class Magic extends Generator
-  _register: (data) ->
-    super data
-    @moreColors 2
-    @moreMonsters 'monsters.txt', 128, 2
-    @moreMonsters 'pokemon.txt', 128, 2
-
-magi = new Magic
-console.log magi.generate()
