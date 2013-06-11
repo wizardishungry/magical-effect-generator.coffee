@@ -2,6 +2,7 @@
 /*
 Data has binary flags (1,2,4,8,16, etc.)
  In this example we have
+ 65536 - Top level setup
  1 - You, blah blah blah,
  2 - Colors,
  4 - Plural body parts,
@@ -12,6 +13,25 @@ Data has binary flags (1,2,4,8,16, etc.)
  128 - AND you blah blah blah,
  256 - Plural body effects,
 */
+
+"65536": [
+  "\\1 \\16",
+  "\\1 and then \\128 \\16",
+  "\\8 \\16",
+  "\\8 and then \\128 \\16",
+  "\\32 \\64 and then \\128 \\16",
+  "\\4 turn \\2 and then \\128 \\16",
+  "\\4 \\256 \\16",
+  "\\32 turns \\2 and \\64, then \\128.",
+  "\\32 \\64 \\16",
+  "\\32 \\64 \\16 \\32 \\64 \\16",
+  "\\8 \\16 \\1 \\16",
+  "\\1, then \\128, and finally \\128.",
+  "\\8 \\16 \\8 \\16",
+  "\\8 and then \\128.",
+  "\\1. \\8."
+],
+
 "1": [
 "You turn into a housecat",
 "You turn into a dog",
